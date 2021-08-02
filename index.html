@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        background: url('./beautiful-mountain-nature-colorful-scenery-minimalist-uhdpaper.com-4K-4.3057.jpg') no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    .input-area {
+        width: 100%;
+        height: 39rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .input-area input {
+        width: 42rem;
+        height: 2.2rem;
+        outline: none;
+        border-radius: 9px;
+        border: none;
+        text-align: center;
+        font-size: large;
+        letter-spacing: 2px;
+        color: #2f55ff;
+        font-weight: 600;
+        font-family: cursive;
+        box-shadow: 0px 0px 20px #ffffff5e;
+    }
+
+    .input-area input:focus {
+        border: 3px solid #2f55ff;
+    }
+
+    .play-button-area {
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .play-button-area button {
+        border: none;
+        padding: 12px;
+        border-radius: 12px;
+        font-size: large;
+        font-family: cursive;
+        margin-right: 35px;
+        cursor: pointer;
+        font-weight: 700;
+        background: #a86bf9;
+    }
+    #b1:hover{
+        background: #2f55ff;
+    }
+    #b2:hover{
+        background: red;
+    }
+    .video-play-area{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+    .video-play-area video{
+        width: 73rem;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px;
+    }
+    .move-top{
+        width: 3rem;
+        height: 2.4rem;
+        background: white;
+        position: fixed;
+        bottom: 29px;
+        right: -45px;
+        border-radius: 15px 0px 0px 15px;
+        box-shadow: 0px 0px 20px #ffffff5e;
+        transition: 0.5s;
+    }
+    .move-top:hover{
+        right: 0px;
+    }
+    .move-top a{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 12px;
+    }
+</style>
+<body>
+    <div class="input-area" id="top-manu">
+        <input type="text" name="Enter url" id="url" value="" placeholder="Enter Video url">
+        <div class="play-button-area">
+            <a href="#video">
+                <button id="b1" type="button" onclick="play()">Play Video</button>
+            </a>
+            <button id="b2" type="button" onclick="history.go(0)">Reset</button>
+        </div>
+    </div>
+    <div class="video-play-area">
+        <video id="video" controls="" src="">
+        </video>
+    </div>
+    <div class="move-top">
+        <a href="#top-manu">
+            <img src="./cil-chevron-double-up-alt.png" alt="">
+        </a>
+    </div>
+</body>
+<script>
+    function play() {
+        var urlm = document.getElementById("url").value;
+        var videos = document.getElementById("video");
+        var srcs = document.createAttribute("src");
+        srcs.value = urlm;
+        videos.setAttributeNode(srcs);
+    }
+</script>
+</html>
